@@ -156,7 +156,7 @@ class DownloadWorker(context: Context, params: WorkerParameters) :
         val headers: String = inputData.getString(ARG_HEADERS)
             ?: throw IllegalArgumentException("Argument '$ARG_HEADERS' should not be null")
         var isResume: Boolean = inputData.getBoolean(ARG_IS_RESUME, false)
-        val timeout: Int = inputData.getInt(ARG_TIMEOUT, 15000)
+        val timeout: Int = inputData.getInt(ARG_TIMEOUT, 60000)
         debug = inputData.getBoolean(ARG_DEBUG, false)
         step = inputData.getInt(ARG_STEP, 10)
         ignoreSsl = inputData.getBoolean(ARG_IGNORESSL, false)
